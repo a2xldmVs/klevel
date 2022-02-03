@@ -2,7 +2,6 @@ cmake_minimum_required(VERSION 3.10)
 project(k_level)
 
 set(CMAKE_CXX_STANDARD 14)
-
 ### add qhull
 include_directories(/usr/local/include/libqhullcpp)
 ### qhullstatic reentrant library
@@ -17,7 +16,6 @@ add_dependencies(libqhullcpp qhull)
 
 ### add osqp
 find_package(osqp REQUIRED)
-
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wl,--no-as-needed -O3 -Wall -ldl")
 
 
@@ -71,6 +69,8 @@ add_executable(${PROJECT_NAME}
         klevel/operator/utk.cpp
         klevel/operator/oru.h
         klevel/operator/oru.cpp
+        klevel/operator/topk.h
+        klevel/operator/topk.cpp
 
 
         lib/lp_lib/bfp/bfp_LUSOL/lp_LUSOL.h
@@ -152,35 +152,6 @@ add_executable(${PROJECT_NAME}
         lib/rtree/tgs.cpp
         lib/rtree/virtualRNode.h
         lib/rtree/virtualRNode.cpp
-
-#        lib/qhull_lib/libqhull_r/libqhull_r.h
-#        lib/qhull_lib/libqhull_r/geom_r.h
-#        lib/qhull_lib/libqhull_r/io_r.h
-#        lib/qhull_lib/libqhull_r/mem_r.h
-#        lib/qhull_lib/libqhull_r/merge_r.h
-#        lib/qhull_lib/libqhull_r/poly_r.h
-#        lib/qhull_lib/libqhull_r/qhull_ra.h
-#        lib/qhull_lib/libqhull_r/qset_r.h
-#        lib/qhull_lib/libqhull_r/random_r.h
-#        lib/qhull_lib/libqhull_r/stat_r.h
-#        lib/qhull_lib/libqhull_r/user_r.h
-#        lib/qhull_lib/libqhull_r/geom2_r.c
-#        lib/qhull_lib/libqhull_r/geom_r.c
-#        lib/qhull_lib/libqhull_r/global_r.c
-#        lib/qhull_lib/libqhull_r/io_r.c
-#        lib/qhull_lib/libqhull_r/libqhull_r.c
-#        lib/qhull_lib/libqhull_r/mem_r.c
-#        lib/qhull_lib/libqhull_r/merge_r.c
-#        lib/qhull_lib/libqhull_r/poly2_r.c
-#        lib/qhull_lib/libqhull_r/poly_r.c
-#        lib/qhull_lib/libqhull_r/qset_r.c
-#        lib/qhull_lib/libqhull_r/random_r.c
-#        lib/qhull_lib/libqhull_r/rboxlib_r.c
-#        lib/qhull_lib/libqhull_r/stat_r.c
-#        lib/qhull_lib/libqhull_r/usermem_r.c
-#        lib/qhull_lib/libqhull_r/userprintf_r.c
-#        lib/qhull_lib/libqhull_r/userprintf_rbox_r.c
-#        lib/qhull_lib/libqhull_r/user_r.c
         )
 find_package(Boost 1.65.1)
 if(Boost_FOUND)
@@ -189,6 +160,7 @@ if(Boost_FOUND)
 else()
     message(STATUS "This program requires the boost library, and will not be compiled.")
 endif()
+
 target_link_libraries(${PROJECT_NAME} PRIVATE osqp::osqpstatic)
 
 target_link_libraries(${PROJECT_NAME} PRIVATE libqhullcpp)
