@@ -89,7 +89,6 @@ Step 2 install gdb, Qhull,  boost, and osqp<br />
  ------------
  We have set some config files in config/ <br />
  You can build an index as setting in config1.txt and run as:
- (TODO, after paper accepted, provide the link to full dataset)
  ```
 ./k_level ../config/config1.txt
 ```
