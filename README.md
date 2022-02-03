@@ -86,15 +86,17 @@ Step 2 install gdb, Qhull,  boost, and osqp<br />
  Step 4: run this project
  ------------
  We have set some config files in config/ <br />
- You can build an index as setting in config1.txt and run as:
+ You can build an index as setting in config_build1.txt and run as:
  ```
 ./k_level ../config/config_build1.txt
 ```
 After building an index file, you could load that index file and 
-answer some queries such as utk as setting in config2.txt and run as:
+answer some queries such as utk as setting in config_query1.txt and run as:
 ```
-./k_level ../config/query1.txt
+./k_level ../config/config_query1.txt
 ```
-See more explanation details in config1.txt or config2.txt
+See more explanation details in config_build1.txt or config_query1.txt
 
+Dataset
+--------
 The full dataset can be accessed by https://drive.google.com/drive/folders/1TaUDTRGgEVmkSvdTbDbYQb5LH0r6gNdm?usp=sharing
