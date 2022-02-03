@@ -1,9 +1,8 @@
-#   ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Ctau%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) -levelIndex
+#   ![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Ctau%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)-levelIndex
 
 This is a cmake project, which also means it is a C plus plus project for paper:
 
-![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Ctau%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0) 
--levelIndex: Towards Efficient Query Processing in Continuous Preference Space
+![equation](http://www.sciweavers.org/tex2img.php?eq=%20%5Ctau%20&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0)-levelIndex: Towards Efficient Query Processing in Continuous Preference Space
 
 This project require serveral libraries, e.g., 
 - Qhull, a lib that computes the convex hull, Delaunay triangulation, Voronoi diagram, halfspace intersection about a point, furthest-site Delaunay triangulation, and furthest-site Voronoi diagram. Its official website is http://www.qhull.org/  
